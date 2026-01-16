@@ -2,17 +2,16 @@ name: Generate Contribution Snake
 
 on:
   schedule:
-    # Runs every 24 hours
     - cron: "0 0 * * *"
   workflow_dispatch:
-  # Also run on every push to the main branch
   push:
     branches:
-      - main
+      - "*"
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
